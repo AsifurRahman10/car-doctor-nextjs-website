@@ -51,7 +51,12 @@ export const Navbar = () => {
             </ul>
           </div>
           <Link href={"/"}>
-            <Image src={"/assets/logo.svg"} width={100} height={85} />
+            <Image
+              src={"/assets/logo.svg"}
+              width={100}
+              height={85}
+              alt="logo"
+            />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
