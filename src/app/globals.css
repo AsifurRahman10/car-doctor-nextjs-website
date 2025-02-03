@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.overlay-bg {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.clip-banner {
+  position: relative;
+  display: inline-block;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}

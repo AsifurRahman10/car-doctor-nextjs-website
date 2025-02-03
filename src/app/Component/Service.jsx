@@ -1,9 +1,9 @@
 import Card from "@/Component/Card";
 import Title from "@/Component/Title";
-import { dbConnect } from "@/lib/dbConnect";
+import { collectionListObj, dbConnect } from "@/lib/dbConnect";
 
 export default async function Service() {
-  const serviceCollection = dbConnect("services");
+  const serviceCollection = dbConnect(collectionListObj.serviceCollection);
   const data = await serviceCollection.find({}).toArray();
   return (
     <div className="my-20">
