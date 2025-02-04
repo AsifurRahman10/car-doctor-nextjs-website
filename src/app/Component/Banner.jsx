@@ -20,7 +20,7 @@ export default function Banner() {
           {/* Background Image */}
           <img
             src={image}
-            className="h-[600px] w-full object-cover"
+            className="h-[400px] lg:h-[600px] w-full object-cover"
             alt="banner"
           />
 

@@ -6,7 +6,7 @@ export default async function Service() {
   const serviceCollection = dbConnect(collectionListObj.serviceCollection);
   const data = await serviceCollection.find({}).toArray();
   return (
-    <div className="my-20">
+    <div className="my-10 lg:my-20">
       <Title
         titleName={"Service"}
         title={"Our Service Area"}
@@ -15,7 +15,7 @@ export default async function Service() {
         }
       ></Title>
 
-      <div className="grid grid-cols-3 gap-6 mt-10">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
         {data.map((item) => (
           <Card key={item._id} item={item}></Card>
         ))}

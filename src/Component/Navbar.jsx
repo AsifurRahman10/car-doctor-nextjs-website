@@ -1,8 +1,13 @@
+"use client";
+
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 export const Navbar = () => {
+  const { data, status } = useSession();
+  console.log(status, data);
   const navList = (
     <>
       <li>
@@ -64,11 +69,28 @@ export const Navbar = () => {
             {navList}
           </ul>
         </div>
-        <div className="navbar-end">
-          {/* <a className="btn">Button</a> */}
-          <button className="btn btn-outline border-[#FF3811] text-[#FF3811] rounded px-8 font-semibold">
-            Appointment
-          </button>
+        <div className="navbar-end gap-4">
+          {status === "authenticated" ? (
+            <>
+              <button
+                onClick={() => signOut()}
+                className="btn text-white bg-[#FF3811] rounded px-8 font-semibold"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link href={"/login"}>
+                <button className="btn bg-[#FF3811] text-white px-8">
+                  Login
+                </button>
+              </Link>
+              <button className="btn btn-outline border-[#FF3811] text-[#FF3811] rounded px-8 font-semibold">
+                Appointment
+              </button>
+            </>
+          )}
         </div>
       </div>
     </nav>

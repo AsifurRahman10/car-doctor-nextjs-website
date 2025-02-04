@@ -3,7 +3,6 @@ import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 export default function Card({ item }) {
   const { title, img, price, _id } = item;
-  console.log(_id);
   return (
     <div className="p-6 border rounded-xl">
       <Image
