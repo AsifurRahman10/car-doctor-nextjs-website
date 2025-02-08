@@ -7,7 +7,6 @@ import React from "react";
 
 export const Navbar = () => {
   const { data, status } = useSession();
-  console.log(status, data);
   const navList = (
     <>
       <li>
