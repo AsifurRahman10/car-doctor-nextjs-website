@@ -1,48 +1,43 @@
 "use client";
 
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
-export default function CheckoutForm({ data }) {
-  const { title, img, price, _id } = data;
+export default function UpdateForm({ data }) {
+  const { date, phone, presentAddress, _id } = data;
   const { data: session } = useSession();
+  const route = useRouter();
 
-  const handleCheckoutForm = async (e) => {
+  const handleUpdateData = async (e) => {
     e.preventDefault();
 
     const form = e.target;
     const date = form.date.value;
     const phone = form.phone.value;
-    const presentAddress = form.dueAmount.value;
+    const presentAddress = form.presentAddress.value;
 
     const payload = {
-      // session
-      customerName: session?.user?.name,
-      email: session?.user?.email,
-
       //user input
       date,
       phone,
       presentAddress,
-      // extra info
-      serviceId: _id,
-      serviceTitle: title,
-      servicePrice: price,
-      serviceImage: img,
     };
-    const res = await fetch("http://localhost:3000/api/service", {
-      method: "POST",
+    const res = await fetch(`http://localhost:3000/api/my-booking/${_id}`, {
+      method: "PATCH",
       body: JSON.stringify(payload),
     });
-    const data = await res.json();
-    if (data.insertedId) {
+
+    const postedResponse = await res.json();
+    if (postedResponse.modifiedCount > 0) {
       toast.success("Booking completed");
       form.reset();
+      route.push("/my-bookings");
     }
   };
   return (
     <div className="mt-10">
-      <form onSubmit={handleCheckoutForm}>
+      <form onSubmit={handleUpdateData}>
         {/* Name & Date Row */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="form-control">
@@ -68,6 +63,7 @@ export default function CheckoutForm({ data }) {
               name="date"
               className="input input-bordered"
               required
+              defaultValue={date}
             />
           </div>
         </div>
@@ -98,6 +94,7 @@ export default function CheckoutForm({ data }) {
               placeholder="Enter due amount"
               className="input input-bordered"
               required
+              disabled
             />
           </div>
         </div>
@@ -114,6 +111,7 @@ export default function CheckoutForm({ data }) {
               placeholder="Enter your phone"
               className="input input-bordered"
               required
+              defaultValue={phone}
             />
           </div>
           <div className="form-control">
@@ -126,6 +124,7 @@ export default function CheckoutForm({ data }) {
               placeholder="Enter your address"
               className="input input-bordered"
               required
+              defaultValue={presentAddress}
             />
           </div>
         </div>

@@ -24,6 +24,8 @@ export default async function page() {
               <th>Service Name</th>
               <th>Service Date</th>
               <th>Service Price</th>
+              <th>Present address</th>
+              <th>Phone</th>
               <th>Action</th>
               <th>Action</th>
             </tr>

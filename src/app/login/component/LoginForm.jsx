@@ -22,17 +22,14 @@ export default function LoginForm() {
         callbackUrl: "/",
         redirect: false,
       });
-      console.log(res);
       if (res.ok) {
         toast.success("login Successful");
         router.push("/");
-        console.log("hello");
         form.reset();
       } else {
         alert("Login failed");
       }
     } catch (error) {
-      console.log(error);
       toast.error("login Successful");
     }
   };
