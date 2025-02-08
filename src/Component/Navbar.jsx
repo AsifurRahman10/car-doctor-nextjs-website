@@ -6,7 +6,7 @@ import Link from "next/link";
 import React from "react";
 
 export const Navbar = () => {
-  const { data, status } = useSession();
+  const { status } = useSession();
   const navList = (
     <>
       <li>
@@ -22,7 +22,7 @@ export const Navbar = () => {
         <Link href={"/blogs"}>Blog</Link>
       </li>
       <li>
-        <Link href={"/contact"}>Contact</Link>
+        <Link href={"/my-bookings"}>My Bookings</Link>
       </li>
     </>
   );
