@@ -23,10 +23,13 @@ export default function UpdateForm({ data }) {
       phone,
       presentAddress,
     };
-    const res = await fetch(`http://localhost:3000/api/my-booking/${_id}`, {
-      method: "PATCH",
-      body: JSON.stringify(payload),
-    });
+    const res = await fetch(
+      `https://nextjs-car-service-website.vercel.app/api/my-booking/${_id}`,
+      {
+        method: "PATCH",
+        body: JSON.stringify(payload),
+      }
+    );
 
     const postedResponse = await res.json();
     if (postedResponse.modifiedCount > 0) {

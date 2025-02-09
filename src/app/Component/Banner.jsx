@@ -34,10 +34,10 @@ export default function Banner() {
               have suffered alteration in some form.
             </p>
             <div className="mt-6 flex space-x-4">
-              <button className="bg-red-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-red-700">
+              <button className="bg-red-600 text-white px-4 md:px-6 py-3 rounded-md font-semibold hover:bg-red-700">
                 Discover More
               </button>
-              <button className="border border-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-black">
+              <button className="border border-white px-4 md:px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-black">
                 Latest Project
               </button>
             </div>

@@ -3,9 +3,12 @@ import { headers } from "next/headers";
 import { Table } from "./Component/Table";
 
 const getBookings = async () => {
-  const data = await fetch("http://localhost:3000/api/service", {
-    headers: headers(),
-  });
+  const data = await fetch(
+    "https://nextjs-car-service-website.vercel.app/api/service",
+    {
+      headers: new Headers(await headers()),
+    }
+  );
   const res = await data.json();
   return res;
 };

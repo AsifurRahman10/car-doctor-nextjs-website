@@ -3,7 +3,10 @@ import { NextResponse } from "next/server"
 
 export const middleware = async (req) => {
 
-    const token = await getToken({ req });
+    const token = await getToken({
+        req,
+        secureCookie: process.env.NODE_ENV === "production" ? true : false,
+    });
     if (token) {
         return NextResponse.next();
     }

@@ -30,10 +30,13 @@ export default function CheckoutForm({ data }) {
       servicePrice: price,
       serviceImage: img,
     };
-    const res = await fetch("http://localhost:3000/api/service", {
-      method: "POST",
-      body: JSON.stringify(payload),
-    });
+    const res = await fetch(
+      "https://nextjs-car-service-website.vercel.app/api/service",
+      {
+        method: "POST",
+        body: JSON.stringify(payload),
+      }
+    );
     const data = await res.json();
     if (data.insertedId) {
       toast.success("Booking completed");

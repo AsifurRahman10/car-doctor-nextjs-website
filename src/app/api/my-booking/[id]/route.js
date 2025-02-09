@@ -19,7 +19,6 @@ export const PATCH = async (req, { params }) => {
     const session = await getServerSession(authOptions);
     const email = session?.user?.email;
     const body = await req.json()
-    console.log("data", body);
 
     const bookingData = await bookingCollection.findOne({ _id: new ObjectId(p.id) });
 

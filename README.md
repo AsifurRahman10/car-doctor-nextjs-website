@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Car Doctor 🚗🔧
 
-## Getting Started
+Car Doctor is a web application where users can explore car services, view details, and book services. Users can manage their bookings with update and delete functionality. Private routes ensure security for managing bookings.
 
-First, run the development server:
+**Live Demo:** [Next.js Car Service Website](https://nextjs-car-service-website.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📸 Screenshots
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Next.js Car Service Website](https://i.ibb.co.com/Z6cCQwpd/nextjs-car-service-website-vercel-app.png)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Display car services from a database.
+- View detailed information about a service.
+- Book a service by providing user details.
+- Manage bookings (update & delete) – protected routes.
+- Responsive UI for a seamless experience.
 
-## Learn More
+## Service Booking Platform
 
-To learn more about Next.js, take a look at the following resources:
+## 🎮 Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Visit the home page to explore available services.
+2. Click on a service to view details.
+3. Book a service by entering the required details.
+4. Manage your bookings (update/delete) from the user dashboard.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 Tech Stack
 
-## Deploy on Vercel
+- **Next.js** – React framework for server-side rendering.
+- **MongoDB** – Database for storing services & bookings.
+- **Tailwind CSS** – Styling for a responsive UI.
+- **JWT Authentication** – Secure user access for private routes.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚙️ Installation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/car-doctor.git
+   ```
+2. Navigate to the project directory
+   ```sh
+   cd car-doctor
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```

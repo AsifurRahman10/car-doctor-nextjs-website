@@ -7,7 +7,7 @@ export const collectionListObj = {
 }
 
 export const dbConnect = (collectionName) => {
-    const uri = process.env.DB_URI;
+    const uri = process.env.NEXT_PUBLIC_DB_URI;
     const client = new MongoClient(uri, {
         serverApi: {
             version: ServerApiVersion.v1,
